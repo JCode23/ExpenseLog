@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.expenselog.NavigationDrawerFragment"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:id="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="132dp"
+        android:background="@color/colorPrimary">
+
+        <ImageView
+            android:layout_width="220dp"
+            android:layout_height="130dp"
+            android:src="@drawable/navigationdrawerbg"
+            android:layout_marginBottom="4dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/overViewLayout"
+        android:layout_below="@+id/container_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/midGrey"
+        android:clickable="true"
+        android:backgroundTint="?attr/selectableItemBackground">
+
+
+        <ImageView
+
+            android:id="@+id/listIcon"
+            android:padding="6dp"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/overview"/>
+
+        <TextView
+            android:id="@+id/listText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:layout_gravity="center_vertical"
+            android:text="Overview"
+            android:textSize="15sp"
+            android:textColor="@color/white"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_below="@+id/overViewLayout"
+        android:id="@+id/dividerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:orientation="horizontal"
+        android:background="@color/lightGrey"
+        android:layout_marginTop="4dp">
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/left_drawerList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/dividerLayout">
+
+    </android.support.v7.widget.RecyclerView>
+
+</RelativeLayout>

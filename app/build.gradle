@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.expenselog"
-        minSdkVersion 14
+        minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
@@ -17,15 +17,41 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
+        lintOptions {
+            abortOnError false
+        }
+    }
+    buildscript {
+        repositories {
+            jcenter()
+        }
+        dependencies {
+            classpath 'com.android.tools.build:gradle:2.1.2'
+            //classpath 'io.realm:realm-gradle-plugin:0.88.2'
+            // NOTE: Do not place your application dependencies here; they belong
+            // in the individual module build.gradle files
+        }
+    }
+
+    repositories {
+        maven { url "https://jitpack.io" }
+        maven { // this is for realm-db
+            url 'http://oss.jfrog.org/artifactory/oss-snapshot-local'
+        }
+    }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
+    // compile project(':MPChartLib')
+    compile 'com.github.PhilJay:MPAndroidChart:v2.2.2'
     compile('com.android.support:appcompat-v7:23.4.0') {
         force = true;
     }
     compile('com.android.support:design:23.4.0') {
+        force = true;
+    }
+    compile('com.android.support:cardview-v7:23.1.1') {
         force = true;
     }
     compile('com.android.support:recyclerview-v7:23.3.0') {
@@ -34,4 +60,15 @@ dependencies {
     compile('com.android.support:support-v4:23.4.0') {
         force = true;
     }
+    compile('com.github.ozodrukh:CircularReveal:1.1.1@aar') {
+        transitive = true;
+    }
+    compile('com.oguzdev:CircularFloatingActionMenu:1.0.2') {
+        force = true;
+    }
+    compile('com.github.citux:datetimepicker:0.2.0') {
+        force = true;
+    }
+    compile 'junit:junit:4.12'
+    compile files('libs/opencsv-2.3.jar')
 }

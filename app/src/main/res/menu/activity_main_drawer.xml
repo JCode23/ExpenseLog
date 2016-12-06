@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group1" android:checkableBehavior="single">
+
+                <item
+                    android:id="@+id/nav_overview"
+                    android:icon="@drawable/overview"
+                    android:title="Overview" />
+
+    </group>
+
+    <group android:id="@+id/group2" android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_account"
+            android:icon="@drawable/account"
+            android:title="Accounts" />
+        <item
+            android:id="@+id/nav_report"
+            android:icon="@drawable/report"
+            android:title="Reports" />
+        <item
+            android:id="@+id/nav_bill_remainders"
+            android:icon="@drawable/bill_remainder"
+            android:title="Bill Remainders" />
+
+        <item
+            android:id="@+id/nav_categories"
+            android:icon="@drawable/categories_icon"
+            android:title="Categories" />
+    </group>
+
+
+</menu>

@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:background="@color/white"
+    android:background="@color/bgColor"
     app:theme="@style/ThemeOverlay.AppCompat.Dark"
     tools:context="com.expenselog.MainActivity"
     tools:showIn="@layout/activity_main">
@@ -19,17 +19,42 @@
         android:id="@+id/drawer_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        xmlns:app="http://schemas.android.com/apk/res-auto">
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:openDrawer="start">
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <io.codetail.widget.RevealFrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <include layout="@layout/account_card">
+
+                    </include>
+                </io.codetail.widget.RevealFrameLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerOverView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp">
+                </android.support.v7.widget.RecyclerView>
+
+            </LinearLayout>
+
         </FrameLayout>
 
-        <fragment
+      <!-- <fragment
             android:id="@+id/fragment_navigation_drawer"
-            android:layout_width="@dimen/nav_drawer_width"
+            android:layout_width="220dp"
             android:layout_height="match_parent"
             android:layout_gravity= "start"
             android:name="com.expenselog.NavigationDrawerFragment"
@@ -37,6 +62,41 @@
             tools:layout="@layout/fragment_navigation_drawer">
 
         </fragment>
+
+        <fragment
+            android:id="@+id/fragment_navigation_drawer_right"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_gravity= "end"
+            android:name="com.expenselog.NavigationDrawerFragmentRight"
+            app:layout="@layout/fragment_navigation_drawer_right"
+            tools:layout="@layout/fragment_navigation_drawer_right">
+
+        </fragment>  -->
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_left_view"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/activity_main_drawer"
+            app:itemTextColor="@color/black"
+            app:itemTextAppearance="@dimen/nav_text_size"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"/>
+
+        <android.support.design.widget.NavigationView
+            android:id="@+id/nav_right_view"
+            android:layout_width="220dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="end"
+            android:fitsSystemWindows="true"
+            app:headerLayout="@layout/nav_header_main"
+            app:menu="@menu/activity_right_drawer"
+            app:itemTextColor="@color/black"
+            app:itemTextAppearance="@dimen/nav_text_size"
+            app:theme="@style/ThemeOverlay.AppCompat.Light"/>
 
     </android.support.v4.widget.DrawerLayout>
 

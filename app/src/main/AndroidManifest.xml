@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.expenselog">
 
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -17,6 +19,78 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Accounts"
+            android:label="@string/all_accounts"
+            android:theme="@style/AppTheme">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Reports"
+            android:label="@string/reports"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".BillReminders"
+            android:label="@string/bill_reminders"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".Categories"
+            android:label="@string/categories"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity
+            android:name=".AddExpense"
+            android:label="@string/add_expense"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddIncome"
+            android:label="@string/add_income"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddReminder"
+            android:label="@string/add_reminder"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Settings"
+            android:label="@string/action_settings"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SetAlert"
+            android:label="@string/set_alert"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CloudSync"
+            android:label="@string/cloud_sync"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DatabaseTools"
+            android:label="@string/database_tools"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".SpinnerCategoryList"
+            android:label="@string/database_tools"
+            android:theme="@style/AppTheme">
+        </activity>
+
+        <activity
+            android:name=".EditAccount"
+            android:label="@string/edit_account"
+            android:theme="@style/AppTheme">
+
         </activity>
     </application>
 
